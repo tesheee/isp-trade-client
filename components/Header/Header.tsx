@@ -1,0 +1,150 @@
+import React from "react";
+import Link from "next/link";
+import { BiSearch } from "react-icons/bi";
+import { AiOutlineUser, AiOutlineHome } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineMenu } from "react-icons/ai";
+import { useRouter } from "next/router";
+import ModalLayout from "../ModalAuth/ModalLayout";
+import Auth from "../ModalAuth/Auth";
+import axios from "axios";
+import { RootState, useAppDispatch } from "../../redux/store";
+import { useSelector } from "react-redux";
+import { setFindItems } from "../../redux/slices/searchSlice";
+import CreatePost from "../ModalAuth/CreatePost";
+
+const Header = () => {
+  const dispatch = useAppDispatch();
+  const { data } = useSelector((state: RootState) => state.user);
+  const [isMobile, setIsMobile] = React.useState(false);
+  //const [mobilePopup, setMobilePopup] = React.useState(false);
+  const [authModal, setAuthModal] = React.useState(false);
+  const [postModal, setPostModal] = React.useState(false);
+  const [search, setSearch] = React.useState("");
+  const router = useRouter();
+
+  const onClickProfile = (): void => {
+    if (data !== null) {
+      router.push("/profile");
+      return;
+    }
+    setAuthModal(!authModal);
+  };
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const onClickSearch = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://isp-trade.onrender.com/search?value=${search}`
+      );
+      dispatch(setFindItems(data));
+      router.push("/search");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return (
+    <header>
+      <div className='menu'>
+        <Link href={"/"}>ISP1 Trade</Link>
+      </div>
+      <div className='logo'></div>
+      <nav>
+        {!isMobile ? (
+          <ul>
+            <li>
+              <div style={{ position: "relative" }}>
+                <BiSearch
+                  style={{
+                    position: "absolute",
+                    right: "8px",
+                    fontSize: "18px",
+                  }}
+                  onClick={onClickSearch}
+                ></BiSearch>
+                <input
+                  autoComplete='off'
+                  id='search'
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  style={{
+                    borderRadius: "25px",
+                    border: "1px solid gray",
+                    padding: "10px",
+                    marginTop: "-10px",
+                  }}
+                ></input>
+              </div>
+            </li>
+            <li onClick={onClickProfile}>
+              <AiOutlineUser
+                style={{
+                  borderRadius: "25px",
+                  border: "1px solid gray",
+                  padding: "10px",
+                  marginTop: "-10px",
+                }}
+              />
+            </li>
+            <li>
+              <div>
+                <Link href={"/"}>
+                  <div>
+                    <AiOutlineHome
+                      style={{
+                        borderRadius: "25px",
+                        border: "1px solid gray",
+                        padding: "10px",
+                        marginTop: "-10px",
+                      }}
+                    />
+                  </div>
+                </Link>
+              </div>
+            </li>
+            <li>
+              <div onClick={() => setPostModal(!postModal)}>
+                <AiOutlinePlus
+                  style={{
+                    borderRadius: "25px",
+                    border: "1px solid gray",
+                    padding: "10px",
+                    marginTop: "-10px",
+                    width: "30px",
+                  }}
+                />
+              </div>
+            </li>
+          </ul>
+        ) : (
+          <div>
+            <AiOutlineMenu
+              style={{ fontSize: "20px", verticalAlign: "bottom" }}
+            />
+          </div>
+        )}
+      </nav>
+      <ModalLayout onClose={setPostModal} show={postModal}>
+        <CreatePost onClose={setPostModal}></CreatePost>
+      </ModalLayout>
+      <ModalLayout onClose={setAuthModal} show={authModal}>
+        <Auth onClose={setAuthModal}></Auth>
+      </ModalLayout>
+    </header>
+  );
+};
+
+export default Header;
