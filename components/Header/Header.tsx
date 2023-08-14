@@ -7,6 +7,7 @@ import {
   AiOutlinePlus,
   AiOutlineMenu,
 } from "react-icons/ai";
+import { GrMap } from "react-icons/gr";
 import { useRouter } from "next/router";
 import ModalLayout from "../ModalAuth/ModalLayout";
 import Auth from "../ModalAuth/Auth";
@@ -110,6 +111,22 @@ const Header = () => {
                     marginTop: "-10px",
                   }}
                 />
+              </li>
+              <li>
+                <div>
+                  <Link href={"/map"}>
+                    <div>
+                      <GrMap
+                        style={{
+                          borderRadius: "25px",
+                          border: "1px solid gray",
+                          padding: "10px",
+                          marginTop: "-10px",
+                        }}
+                      />
+                    </div>
+                  </Link>
+                </div>
               </li>
               <li>
                 <div>
