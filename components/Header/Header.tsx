@@ -71,7 +71,7 @@ const Header = () => {
     <>
       <header>
         <div className='menu'>
-          <Link href={"/"}><img src='/isp222.png' style={{width: '435px'}}/></Link>
+          <Link href={"/"}><img src='/isp222.png'/></Link>
         </div>
         <div className='logo'></div>
         <nav>
