@@ -1,9 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import { BiSearch } from "react-icons/bi";
-import { AiOutlineUser, AiOutlineHome } from "react-icons/ai";
-import { AiOutlinePlus } from "react-icons/ai";
-import { AiOutlineMenu } from "react-icons/ai";
+import {
+  AiOutlineUser,
+  AiOutlineHome,
+  AiOutlinePlus,
+  AiOutlineMenu,
+} from "react-icons/ai";
 import { useRouter } from "next/router";
 import ModalLayout from "../ModalAuth/ModalLayout";
 import Auth from "../ModalAuth/Auth";
@@ -34,8 +37,9 @@ const Header = () => {
   const onClickAddPost = () => {
     if (data !== null) {
       setPostModal(!postModal);
+      return;
     }
-    return;
+    window.alert("Ты не можешь создать пост без аккаунта");
   };
 
   React.useEffect(() => {
