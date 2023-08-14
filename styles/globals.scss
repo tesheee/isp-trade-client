@@ -1,3 +1,14 @@
+:root {
+  --bg-color: white;
+  --text-color: black;
+}
+
+.dark-theme {
+  --bg-color: black;
+  --text-color: white;
+}
+
+
 @font-face {
   font-family: "SF Pro Text";
   font-style: normal;
