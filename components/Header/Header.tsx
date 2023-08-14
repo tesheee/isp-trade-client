@@ -31,6 +31,13 @@ const Header = () => {
     setAuthModal(!authModal);
   };
 
+  const onClickAddPost = () => {
+    if (data !== null) {
+      setPostModal(!postModal);
+    }
+    return;
+  };
+
   React.useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -116,7 +123,7 @@ const Header = () => {
               </div>
             </li>
             <li>
-              <div onClick={() => setPostModal(!postModal)}>
+              <div onClick={onClickAddPost}>
                 <AiOutlinePlus
                   style={{
                     borderRadius: "25px",
