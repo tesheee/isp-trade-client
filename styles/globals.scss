@@ -1,11 +1,16 @@
 :root {
-  --bg-color: white;
+  --background-color: white;
   --text-color: black;
 }
 
 .dark-theme {
-  --bg-color: #111111;
+  --background-color: #111111;
   --text-color: white;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 @font-face {
@@ -24,11 +29,6 @@
 
 :root {
   font-family: "SF Pro Text", sans-serif;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
 }
 
 * {
