@@ -73,7 +73,7 @@ const Header = ({ isDarkMode }: any) => {
       <header>
         <div className='menu'>
           <Link href={"/"}>
-            <img src={isDarkMode ? "/isp222.png" : "/isp.png"} />
+            <img src={isDarkMode ? "/isp.png" : "/isp222.png"} />
           </Link>
         </div>
         <div className='logo'></div>
