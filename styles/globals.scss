@@ -2,7 +2,7 @@
   background-color: white;
   color: black;
   header {
-    background-color: white
+    background-color: white;
   }
 }
 
@@ -61,6 +61,7 @@ header {
   position: relative;
   // border-bottom: 2px solid gray;
   position: sticky;
+  z-index: 10;
   //background: transparent;
   top: 0;
   ul {
