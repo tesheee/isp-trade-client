@@ -17,7 +17,7 @@ import { useSelector } from "react-redux";
 import { setFindItems } from "../../redux/slices/searchSlice";
 import CreatePost from "../ModalAuth/CreatePost";
 
-const Header = ({isDarkMode}) => {
+const Header = ({ isDarkMode }: any) => {
   const dispatch = useAppDispatch();
   const { data } = useSelector((state: RootState) => state.user);
   const [isMobile, setIsMobile] = React.useState(false);
@@ -72,7 +72,9 @@ const Header = ({isDarkMode}) => {
     <>
       <header>
         <div className='menu'>
-          <Link href={"/"}><img src={isDarkMode ? '/isp222.png' : '/isp.png'}/></Link>
+          <Link href={"/"}>
+            <img src={isDarkMode ? "/isp222.png" : "/isp.png"} />
+          </Link>
         </div>
         <div className='logo'></div>
         <nav>
