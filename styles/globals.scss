@@ -4,10 +4,9 @@
 }
 
 .dark-theme {
-  --bg-color: black;
+  --bg-color: #111111;
   --text-color: white;
 }
-
 
 @font-face {
   font-family: "SF Pro Text";
@@ -25,6 +24,11 @@
 
 :root {
   font-family: "SF Pro Text", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 * {
