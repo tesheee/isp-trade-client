@@ -9,7 +9,7 @@ interface IMainLayout {
   children: any;
 }
 
-const mainLayout: React.FC<IMainLayout> = ({ children }) => {
+const mainLayout: React.FC<IMainLayout> = ({ children, isDarkMode }) => {
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
@@ -19,7 +19,7 @@ const mainLayout: React.FC<IMainLayout> = ({ children }) => {
   return (
     <>
       <div id='portal'></div>
-      <Header></Header>
+      <Header isDarkMode={isDarkMode}></Header>
       <main>{children}</main>
       <Footer></Footer>
     </>
