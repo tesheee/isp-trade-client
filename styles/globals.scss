@@ -1,16 +1,11 @@
-:root {
-  --background-color: white;
-  --text-color: black;
+.light-theme {
+  background-color: white;
+  color: black;
 }
 
 .dark-theme {
-  --background-color: #111111;
-  --text-color: white;
-}
-
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: #111111;
+  color: white;
 }
 
 @font-face {
