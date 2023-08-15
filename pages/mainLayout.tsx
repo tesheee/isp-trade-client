@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 interface IMainLayout {
   children: any;
+  isDarkMode: any;
 }
 
 const mainLayout: React.FC<IMainLayout> = ({ children, isDarkMode }) => {
@@ -19,7 +20,7 @@ const mainLayout: React.FC<IMainLayout> = ({ children, isDarkMode }) => {
   return (
     <>
       <div id='portal'></div>
-      <Header isDarkMode={isDarkMode}> <Header/>
+      <Header isDarkMode={isDarkMode}> </Header>
       <main>{children}</main>
       <Footer></Footer>
     </>
