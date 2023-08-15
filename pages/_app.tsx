@@ -7,13 +7,11 @@ import React from "react";
 import store from "../redux/store";
 
 function App({ Component, pageProps }: AppProps) {
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  const [isDarkMode, setIsDarkMode] = useState(false);
   
   return (
       <Provider store={store}>
-        <ThemeWrapper isDarkMode={isDarkMode}>
+        <ThemeWrapper isDarkMode={isDarkMode} toggleTheme={setIsDarkMode}>
           <button className="theme-toggle-button" onClick={toggleTheme}>
             Переключить тему
           </button>
