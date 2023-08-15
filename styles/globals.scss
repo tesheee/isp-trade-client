@@ -1,11 +1,17 @@
 .light-theme {
   background-color: white;
   color: black;
+  header {
+    background-color: 'white'
+  }
 }
 
 .dark-theme {
   background-color: #111111;
   color: white;
+  header {
+    background-color: #111111;
+  }
 
   footer {
     background-color: #111111;
@@ -55,7 +61,7 @@ header {
   position: relative;
   // border-bottom: 2px solid gray;
   position: sticky;
-  background: transparent;
+  //background: transparent;
   top: 0;
   ul {
     display: flex;
