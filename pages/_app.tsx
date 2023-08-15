@@ -14,7 +14,7 @@ function App({ Component, pageProps }: AppProps) {
           <button className="theme-toggle-button" onClick={() => setIsDarkMode(!isDarkMode)}>
             Переключить тему
           </button>
-          <MainLayout>
+          <MainLayout isDarkMode={isDarkMode}>
             <Component {...pageProps} />
           </MainLayout>
         </div>
