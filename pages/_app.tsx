@@ -7,8 +7,6 @@ import React from "react";
 import store from "../redux/store";
 
 function App({ Component, pageProps }: AppProps) {
-  const [isDarkMode, setIsDarkMode] = React.useState(false); // Добавьте состояние для темы
-
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
