@@ -11,14 +11,14 @@ function App({ Component, pageProps }: AppProps) {
   
   return (
       <Provider store={store}>
-        <ThemeWrapper isDarkMode={isDarkMode} toggleTheme={setIsDarkMode}>
-          <button className="theme-toggle-button" onClick={toggleTheme}>
+        <div className={isDarkMode ? 'dark-theme' : 'light-theme'}>
+          <button className="theme-toggle-button" onClick={() => setIsDarkMode(!isDarkMode)}>
             Переключить тему
           </button>
           <MainLayout>
             <Component {...pageProps} />
           </MainLayout>
-        </ThemeWrapper>
+        </div>
       </Provider>
   );
 }
