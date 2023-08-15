@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/globals.scss";
 
 const ThemeWrapper = ({ children, isDarkMode }) => {
   return (
