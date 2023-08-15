@@ -19,7 +19,7 @@ const mainLayout: React.FC<IMainLayout> = ({ children, isDarkMode }) => {
   return (
     <>
       <div id='portal'></div>
-      <Header isDarkMode={isDarkMode} />
+      <Header isDarkMode={isDarkMode}> <Header/>
       <main>{children}</main>
       <Footer></Footer>
     </>
