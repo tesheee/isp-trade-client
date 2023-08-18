@@ -132,6 +132,22 @@ const Header = ({ isDarkMode }: any) => {
               </li>
               <li>
                 <div>
+                  <button
+                    className="theme-toggle-button"
+                    onClick={() => setIsDarkMode(!isDarkMode)}
+                    style={{
+                      borderRadius: "25px",
+                      border: "1px solid gray",
+                      padding: "10px",
+                      marginTop: "-10px",
+                    }}
+                  >
+                    Т
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div>
                   <Link href={"/"}>
                     <div>
                       <AiOutlineHome
