@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { BiSearch } from "react-icons/bi";
+import { BiSearch, BiMoon } from "react-icons/bi";
 import {
   AiOutlineUser,
   AiOutlineHome,
@@ -17,7 +17,7 @@ import { useSelector } from "react-redux";
 import { setFindItems } from "../../redux/slices/searchSlice";
 import CreatePost from "../ModalAuth/CreatePost";
 
-const Header = ({ isDarkMode, setIsDarkMode  }: any) => {
+const Header = ({ isDarkMode, setIsDarkMode }: any) => {
   const dispatch = useAppDispatch();
   const { data } = useSelector((state: RootState) => state.user);
   const [isMobile, setIsMobile] = React.useState(false);
@@ -116,32 +116,30 @@ const Header = ({ isDarkMode, setIsDarkMode  }: any) => {
               </li>
               <li>
                 <div>
-                    <Link href={"http://65.21.196.176:25676/"}>
-                      <div>
-                        <GrMap
-                          style={{
-                            borderRadius: "25px",
-                            border: "1px solid gray",
-                            padding: "10px",
-                            marginTop: "-10px",
-                          }}
-                        />
-                      </div>
-                    </Link>
+                  <Link href={"http://65.21.196.176:25676/"}>
+                    <div>
+                      <GrMap
+                        style={{
+                          borderRadius: "25px",
+                          border: "1px solid gray",
+                          padding: "10px",
+                          marginTop: "-10px",
+                        }}
+                      />
+                    </div>
+                  </Link>
                 </div>
               </li>
               <li>
-                <div>
-                    <div onClick={() => setIsDarkMode((prevMode) => !prevMode)}>
-                        <p
-                          style={{
-                            borderRadius: "25px",
-                            border: "1px solid gray",
-                            padding: "10px",
-                            marginTop: "-10px",
-                          }}
-                        >T<p/>
-                      </div>
+                <div onClick={() => setIsDarkMode((prev: any) => !prev)}>
+                  <BiMoon
+                    style={{
+                      borderRadius: "25px",
+                      border: "1px solid gray",
+                      padding: "10px",
+                      marginTop: "-10px",
+                    }}
+                  />
                 </div>
               </li>
               <li>
