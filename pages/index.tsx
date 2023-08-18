@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import axios from "axios";
 import ProductCard from "../components/ProductCard";
-import ProductSkeleton from "../components/ModalAuth/ProductSkeleton";
+import ProductSkeleton from "../components/ProductSkeleton";
 
 export interface IPost {
   _id: number;
