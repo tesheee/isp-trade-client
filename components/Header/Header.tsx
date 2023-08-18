@@ -118,7 +118,7 @@ const Header = ({ isDarkMode }: any) => {
                 <div>
                     <Link href={"http://65.21.196.176:25676/"}>
                       <div>
-                        <AiOutlineUser
+                        <GrMap
                           style={{
                             borderRadius: "25px",
                             border: "1px solid gray",
