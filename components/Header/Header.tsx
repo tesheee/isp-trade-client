@@ -1,13 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import { BiSearch, BiMoon } from "react-icons/bi";
+import { BiMoon } from "react-icons/bi";
+import { FiSearch } from "react-icons/fi"
 import {
   AiOutlineUser,
   AiOutlineHome,
   AiOutlinePlus,
   AiOutlineMenu,
 } from "react-icons/ai";
-import { GrMap } from "react-icons/gr";
+import { PiMapPinLineBold } from "react-icons/pi";
 import { useRouter } from "next/router";
 import ModalLayout from "../ModalAuth/ModalLayout";
 import Auth from "../ModalAuth/Auth";
@@ -82,14 +83,16 @@ const Header = ({ isDarkMode, setIsDarkMode }: any) => {
             <ul>
               <li>
                 <div style={{ position: "relative" }}>
-                  <BiSearch
+                  <FiSearch
+                    className={!isDarkMode ? "dark-icon" : "light-icon"}
                     style={{
                       position: "absolute",
                       right: "8px",
                       fontSize: "18px",
+
                     }}
                     onClick={onClickSearch}
-                  ></BiSearch>
+                  ></FiSearch>
                   <input
                     autoComplete='off'
                     id='search'
@@ -106,6 +109,7 @@ const Header = ({ isDarkMode, setIsDarkMode }: any) => {
               </li>
               <li onClick={onClickProfile}>
                 <AiOutlineUser
+                  className={isDarkMode ? "dark-icon" : "light-icon"}
                   style={{
                     borderRadius: "25px",
                     border: "1px solid gray",
@@ -118,7 +122,8 @@ const Header = ({ isDarkMode, setIsDarkMode }: any) => {
                 <div>
                   <Link href={"http://65.21.196.176:25676/"}>
                     <div>
-                      <GrMap
+                      <PiMapPinLineBold
+                        className={isDarkMode ? "dark-icon" : "light-icon"}
                         style={{
                           borderRadius: "25px",
                           border: "1px solid gray",
@@ -133,6 +138,7 @@ const Header = ({ isDarkMode, setIsDarkMode }: any) => {
               <li>
                 <div onClick={() => setIsDarkMode((prev: any) => !prev)}>
                   <BiMoon
+                    className={isDarkMode ? "dark-icon" : "light-icon"}
                     style={{
                       borderRadius: "25px",
                       border: "1px solid gray",
@@ -147,6 +153,7 @@ const Header = ({ isDarkMode, setIsDarkMode }: any) => {
                   <Link href={"/"}>
                     <div>
                       <AiOutlineHome
+                          className={isDarkMode ? "dark-icon" : "light-icon"}
                         style={{
                           borderRadius: "25px",
                           border: "1px solid gray",
@@ -161,6 +168,7 @@ const Header = ({ isDarkMode, setIsDarkMode }: any) => {
               <li>
                 <div onClick={onClickAddPost}>
                   <AiOutlinePlus
+                      className={isDarkMode ? "dark-icon" : "light-icon"}
                     style={{
                       borderRadius: "25px",
                       border: "1px solid gray",
