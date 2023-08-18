@@ -109,7 +109,7 @@ const Header = ({ isDarkMode, setIsDarkMode }: any) => {
               </li>
               <li onClick={onClickProfile}>
                 <AiOutlineUser
-                  className={"dark-icon"}
+                  className={isDarkMode ? "dark-icon" : "light-icon"}
                   style={{
                     borderRadius: "25px",
                     border: "1px solid gray",
