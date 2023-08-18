@@ -1,7 +1,7 @@
 import React from "react";
 import { IPost } from "../pages";
 import ContentLoader from "react-content-loader";
-import ProductSkeleton from "./ProductSkeleton";
+import ProductSkeleton from "/ProductSkeleton";
 
 interface IProductCardProps {
   product: IPost;
