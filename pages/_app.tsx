@@ -7,19 +7,17 @@ import store from "../redux/store";
 
 function App({ Component, pageProps }: AppProps) {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  
+
   return (
-      <Provider store={store}>
-        <div className={isDarkMode ? 'dark-theme' : 'light-theme'}>
-          <button className="theme-toggle-button" onClick={() => setIsDarkMode(!isDarkMode)}>
-            Переключить тему
-          </button>
-          <MainLayout isDarkMode={isDarkMode}>
-            <Component {...pageProps} />
-          </MainLayout>
-        </div>
-      </Provider>
+    <Provider store={store}>
+      <div className={isDarkMode ? "dark-theme" : "light-theme"}>
+        <MainLayout isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}>
+          <Component {...pageProps} />
+        </MainLayout>
+      </div>
+    </Provider>
   );
 }
 
 export default App;
+
