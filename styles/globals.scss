@@ -16,6 +16,12 @@
   footer {
     background-color: #111111;
   }
+  .product-card {
+  transition: 0.3s;
+  &:hover {
+    box-shadow: 0 4px 14px rgba(220, 220, 220, 0.1);
+  }
+}
 }
 
 .dark-icon {
