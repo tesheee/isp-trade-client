@@ -17,7 +17,7 @@ import { useSelector } from "react-redux";
 import { setFindItems } from "../../redux/slices/searchSlice";
 import CreatePost from "../ModalAuth/CreatePost";
 
-const Header = ({ isDarkMode }: any) => {
+const Header = ({ isDarkMode, setIsDarkMode  }: any) => {
   const dispatch = useAppDispatch();
   const { data } = useSelector((state: RootState) => state.user);
   const [isMobile, setIsMobile] = React.useState(false);
@@ -132,18 +132,16 @@ const Header = ({ isDarkMode }: any) => {
               </li>
               <li>
                 <div>
-                  <Link onClick={() => setIsDarkMode(!isDarkMode)}>
-                    <div>
-                        <GrMap
+                    <div onClick={() => setIsDarkMode((prevMode) => !prevMode)}>
+                        <p
                           style={{
                             borderRadius: "25px",
                             border: "1px solid gray",
                             padding: "10px",
                             marginTop: "-10px",
                           }}
-                        />
+                        >T<p/>
                       </div>
-                  </Link>
                 </div>
               </li>
               <li>
