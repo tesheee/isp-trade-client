@@ -47,7 +47,7 @@ export default function Home() {
         <div className='content'>
           {isLoading ? [...Array(10)].map(() => <ProductSkeleton/>) :
               posts.map((post, i) => (
-                  <ProductCard key={i} product={post} loading={isLoading}/>
+                  <ProductCard key={i} product={post}/>
           ))}
         </div>
       </>
