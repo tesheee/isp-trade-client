@@ -84,7 +84,7 @@ const Header = ({ isDarkMode, setIsDarkMode }: any) => {
               <li>
                 <div style={{ position: "relative" }}>
                   <FiSearch
-                
+                className={"dark-icon"}
                     style={{
                       position: "absolute",
                       right: "8px",
