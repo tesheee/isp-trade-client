@@ -18,6 +18,14 @@
   }
 }
 
+.dark-icon {
+  color: #ffffff; // Цвет для тёмной темы
+}
+
+.light-icon {
+  color: #000000; // Цвет для светлой темы
+}
+
 @font-face {
   font-family: "SF Pro Text";
   font-style: normal;
