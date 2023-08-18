@@ -116,18 +116,9 @@ const Header = ({ isDarkMode }: any) => {
               </li>
               <li>
                 <div>
-                  <Link href={"/map"}>
                     <div>
-                      <GrMap
-                        style={{
-                          borderRadius: "25px",
-                          border: "1px solid gray",
-                          padding: "10px",
-                          marginTop: "-10px",
-                        }}
-                      />
+                      <a href='http://65.21.196.176:25676/'></a>
                     </div>
-                  </Link>
                 </div>
               </li>
               <li>
