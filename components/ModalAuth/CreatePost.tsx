@@ -39,7 +39,7 @@ const CreatePost: React.FC<ICreatePost> = ({ onClose }) => {
           textAlign: "center",
         }}
       >
-        <p style={{ fontSize: "20px" }}>Создание поста</p>
+        <span style={{ fontSize: "20px" }}>Создание поста</span>
 
         <input
           value={name}
