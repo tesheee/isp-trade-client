@@ -219,14 +219,14 @@ const Header = ({ isDarkMode, setIsDarkMode }: any) => {
           >
             <li>
               <div style={{ position: "relative" }}>
-                <BiSearch
+                <FiSearch
                   style={{
                     position: "absolute",
                     right: "8px",
                     fontSize: "18px",
                   }}
                   onClick={onClickSearch}
-                ></BiSearch>
+                ></FiSearch>
                 <input
                   autoComplete='off'
                   id='search'
