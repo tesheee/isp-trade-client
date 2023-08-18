@@ -116,9 +116,18 @@ const Header = ({ isDarkMode }: any) => {
               </li>
               <li>
                 <div>
-                    <div>
-                      <a href='http://65.21.196.176:25676/'></a>
-                    </div>
+                    <Link href={"http://65.21.196.176:25676/"}>
+                      <div>
+                        <AiOutlineUser
+                          style={{
+                            borderRadius: "25px",
+                            border: "1px solid gray",
+                            padding: "10px",
+                            marginTop: "-10px",
+                          }}
+                        />
+                      </div>
+                    </Link>
                 </div>
               </li>
               <li>
