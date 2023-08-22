@@ -120,7 +120,7 @@ const Header = ({ isDarkMode, setIsDarkMode }: any) => {
               </li>
               <li>
                 <div>
-                  <Link href={"http://65.21.196.176:25676/"}>
+                  <Link href={"http://65.108.18.29:25618/"}>
                     <div>
                       <PiMapPinLineBold
                         className={isDarkMode ? "dark-icon" : "light-icon"}
